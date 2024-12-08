@@ -12,6 +12,7 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
 
 void Game::Run(Controller const &controller, Renderer &renderer,
                std::size_t target_frame_duration) {
+  // 程序启动之后的毫秒数
   Uint32 title_timestamp = SDL_GetTicks();
   Uint32 frame_start;
   Uint32 frame_end;
@@ -20,12 +21,16 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   bool running = true;
 
   while (running) {
+    // 当前窗口运行的毫秒数
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
-    Update();
-    renderer.Render(snake, food);
+    if (!snake.is_stopped()) {
+      Update();
+      renderer.Render(snake, food);
+    }
+
 
     frame_end = SDL_GetTicks();
 

@@ -11,6 +11,11 @@ int main() {
   constexpr std::size_t kGridWidth{32};
   constexpr std::size_t kGridHeight{32};
 
+  // 屏幕的宽度 640
+  // 屏幕的高度 640
+  // 网格宽度 32
+  // 网格高度 32
+  // 每个格子是 宽 20， 高20
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
   Game game(kGridWidth, kGridHeight);

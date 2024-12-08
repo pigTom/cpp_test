@@ -1,5 +1,4 @@
-#ifndef GAME_H
-#define GAME_H
+#pragma once
 
 #include <random>
 #include "SDL.h"
@@ -29,5 +28,3 @@ class Game {
   void PlaceFood();
   void Update();
 };
-
-#endif

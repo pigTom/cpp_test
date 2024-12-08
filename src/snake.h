@@ -27,6 +27,16 @@ class Snake {
   float head_x;
   float head_y;
   std::vector<SDL_Point> body;
+  inline void stop_run() {
+        stopped = true;
+    }
+void keep_run() {
+      stopped = false;
+  }
+
+    bool is_stopped() const {
+      return stopped;
+  }
 
  private:
   void UpdateHead();
@@ -35,6 +45,7 @@ class Snake {
   bool growing{false};
   int grid_width;
   int grid_height;
+    bool stopped{false};
 };
 
 #endif

@@ -1,5 +1,4 @@
-#ifndef RENDERER_H
-#define RENDERER_H
+#pragma once
 
 #include <vector>
 #include "SDL.h"
@@ -23,5 +22,3 @@ class Renderer {
   const std::size_t grid_width;
   const std::size_t grid_height;
 };
-
-#endif
